@@ -1,4 +1,4 @@
-const createUserSchema = {
+const createUserSchemaArray = {
     type: "array",
     items: {
         type: "object",
@@ -7,7 +7,7 @@ const createUserSchema = {
             username: { type: "string" },
             firstName: { type: "string" },
             lastName: { type: "string" },
-            email: { type: "string"},
+            email: { type: "string" },
             password: { type: "string" },
             phone: { type: "string" },
             userStatus: { type: "integer" }
@@ -15,8 +15,25 @@ const createUserSchema = {
         required: ["id", "username", "firstName", "lastName", "email", "password", "phone", "userStatus"],
         additionalProperties: false
     }
-}
+};
+
+const createUserSchemaObject = {
+    type: "object",
+    properties: {
+        id: { type: "integer" },
+        username: { type: "string" },
+        firstName: { type: "string" },
+        lastName: { type: "string" },
+        email: { type: "string" },
+        password: { type: "string" },
+        phone: { type: "string" },
+        userStatus: { type: "integer" }
+    },
+    required: ["id", "username", "firstName", "lastName", "email", "password", "phone", "userStatus"],
+    additionalProperties: false
+};
 
 module.exports = {
-    createUserSchema,
-}
+    createUserSchemaArray,
+    createUserSchemaObject
+};
